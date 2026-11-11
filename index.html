@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="logo.jpg">
+<meta property="og:title" content="Off Limits">
+<meta property="og:description" content="Streetwear premium. Livraison gratuite au Maroc. Shop now en DM : 0684931988.">
+<meta property="og:image" content="logo.jpg">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Off Limits</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Off Limits — streetwear et hoodies premium. Livraison gratuite partout au Maroc. Commande en DM : 0684931988.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: a restricted zone. Caution tape frames the page, a flashlight hero reveals what is hidden, then a product drop, a manifesto, and a three-step order path. */
+:root {
+  --ink: #0B0B0A;
+  --ink-2: #151513;
+  --line: #2C2B27;
+  --bone: #ECE8DF;
+  --muted: #A6A196;
+  --signal: #FF2A1A;
+  --on-signal: #0B0B0A;
+  --display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --wrap: 1280px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: clip;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--ink);
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: .14em; font-size: 13px; }
+
+/* Caution tape */
+.tape {
+  background: var(--signal); color: var(--on-signal);
+  border-block: 4px solid var(--ink);
+  overflow: hidden; white-space: nowrap;
+  font-family: var(--display); text-transform: uppercase; letter-spacing: .06em;
+}
+.tape__track { display: inline-flex; gap: 2.2em; padding-block: 8px; animation: slide 28s linear infinite; }
+.tape__track span { display: inline-flex; align-items: center; gap: 2.2em; }
+.tape__track span::after { content: ""; width: 10px; height: 10px; background: var(--on-signal); transform: rotate(45deg); }
+@keyframes slide { to { transform: translateX(-50%); } }
+.tape--top { font-size: 15px; }
+
+/* Header */
+.header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header__in { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand img { width: 40px; height: 40px; border-radius: 50%; clip-path: circle(48.5%); }
+.brand b { font-family: var(--display); font-weight: 400; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav a { text-decoration: none; font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.nav a:hover { color: var(--bone); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 22px;
+  font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  text-decoration: none; border: 2px solid var(--bone); color: var(--bone); background: transparent;
+  cursor: pointer; transition: background .2s, color .2s, transform .2s;
+}
+.btn:hover { background: var(--bone); color: var(--ink); }
+.btn--signal { background: var(--signal); border-color: var(--signal); color: var(--on-signal); }
+.btn--signal:hover { background: var(--bone); border-color: var(--bone); color: var(--ink); }
+.btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+@media (max-width: 760px) { .nav a { display: none; } .header .btn { min-height: 44px; padding: 0 14px; } }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero__secret {
+  position: absolute; inset: 0; pointer-events: none;
+  font-family: var(--display); text-transform: uppercase; font-size: 64px; line-height: 1;
+  color: var(--signal); opacity: .9; word-spacing: .2em; overflow: hidden;
+  -webkit-mask-image: radial-gradient(circle 190px at var(--mx, 70%) var(--my, 40%), #000 0%, #000 35%, transparent 100%);
+          mask-image: radial-gradient(circle 190px at var(--mx, 70%) var(--my, 40%), #000 0%, #000 35%, transparent 100%);
+}
+.hero__secret p { margin: 0; white-space: nowrap; }
+.hero__secret p:nth-child(even) { transform: translateX(-120px); }
+.hero__in { position: relative; display: grid; gap: 28px; padding-block: 56px 72px; }
+.hero__eyebrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; color: var(--muted); }
+.hero__eyebrow b { color: var(--signal); }
+.hero__title { margin: 0; font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: .84; letter-spacing: -.01em; }
+.hero__row { display: flex; align-items: center; justify-content: space-between; gap: 3vw; }
+.hero__off { font-size: clamp(112px, 26vw, 360px); }
+.hero__limits { display: block; font-size: clamp(112px, 26vw, 372px); }
+.disc {
+  width: clamp(120px, 24vw, 330px); aspect-ratio: 1; max-width: 100%; flex-shrink: 0;
+  border-radius: 50%; border: 3px solid var(--bone); padding: 2.5%;
+  transform: rotate(var(--rot, 0deg)); background: var(--ink);
+}
+.disc img { width: 100%; height: 100%; display: block; border-radius: 50%; clip-path: circle(48.5%); object-fit: cover; }
+.hero__foot { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.hero__tag { margin: 0; font-family: var(--display); font-size: clamp(36px, 5vw, 64px); line-height: 1; text-transform: uppercase; text-wrap: balance; }
+.hero__tag em { font-style: normal; color: var(--signal); }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+.hero__hint { position: absolute; right: var(--gutter-r); bottom: 20px; color: var(--muted); font-size: 11px; }
+@media (max-width: 760px) {
+  .hero__foot { grid-template-columns: minmax(0, 1fr); }
+  .hero__ctas { justify-content: flex-start; }
+  .hero__hint { display: none; }
+}
+
+/* Facts band */
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.fact { display: flex; gap: 16px; align-items: flex-start; padding: 28px 24px; border-right: 1px solid var(--line); }
+.fact:last-child { border-right: 0; }
+.fact svg { width: 32px; height: 32px; flex-shrink: 0; color: var(--signal); }
+.fact h3 { margin: 0 0 4px; font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.05; text-transform: uppercase; }
+.fact p { margin: 0; color: var(--muted); font-size: 15px; }
+.fact .num { font-family: var(--mono); color: var(--bone); font-weight: 700; letter-spacing: .06em; }
+@media (max-width: 860px) { .facts { grid-template-columns: minmax(0, 1fr); } .fact { border-right: 0; border-bottom: 1px solid var(--line); } .fact:last-child { border-bottom: 0; } }
+
+/* Sections */
+.section { padding-block: 96px; border-bottom: 1px solid var(--line); }
+.section__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 32px; margin-bottom: 40px; }
+.section__head h2 { margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(56px, 9vw, 128px); line-height: .88; text-transform: uppercase; }
+.section__head p { margin: 0; max-width: 38ch; color: var(--muted); }
+
+/* Products */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 1020px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.card { display: flex; flex-direction: column; background: var(--ink-2); border: 1px solid var(--line); min-width: 0; }
+.card__stage {
+  position: relative; aspect-ratio: 4 / 4.2; max-width: 100%; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; background: var(--stage, var(--signal));
+}
+.card__word {
+  position: absolute; inset: auto 0 -2%; text-align: center; pointer-events: none;
+  font-family: var(--display); text-transform: uppercase; font-size: clamp(90px, 13vw, 170px); line-height: .8;
+  color: var(--word, rgba(11, 11, 10, .14));
+}
+.hoodie { position: relative; width: 78%; aspect-ratio: 400 / 440; max-width: 100%; transition: transform .4s cubic-bezier(.2, .8, .2, 1); }
+.card:hover .hoodie { transform: translateY(-6px) rotate(-1.5deg); }
+.hoodie svg { width: 100%; height: 100%; display: block; }
+.hoodie .body { fill: var(--garment); transition: fill .3s; }
+.hoodie .hole { fill: rgba(0, 0, 0, .55); }
+.hoodie .seam { fill: none; stroke: rgba(0, 0, 0, .35); stroke-width: 2; }
+.hoodie .string { stroke: var(--string, #ECE8DF); stroke-width: 3; stroke-linecap: round; }
+.hoodie img { position: absolute; left: 41%; top: 36%; width: 18%; aspect-ratio: 1; border-radius: 50%; clip-path: circle(48.5%); object-fit: cover; }
+.card__tag { position: absolute; top: 14px; left: 14px; background: var(--ink); color: var(--bone); padding: 6px 10px; }
+.card__body { display: grid; gap: 18px; padding: 22px; }
+.card__top { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.card__top h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 32px; line-height: 1; text-transform: uppercase; }
+.card__top p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.price { font-family: var(--display); font-size: 28px; color: var(--signal); white-space: nowrap; }
+.opt { display: grid; gap: 10px; border: 0; margin: 0; padding: 0; min-width: 0; }
+.opt legend { padding: 0; margin-bottom: 10px; color: var(--muted); }
+.opt legend b { color: var(--bone); font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.swatch {
+  width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--line); background: var(--c);
+  cursor: pointer; padding: 0; box-shadow: inset 0 0 0 3px var(--ink-2);
+}
+.swatch[aria-pressed="true"] { border-color: var(--bone); }
+.size input { position: absolute; opacity: 0; pointer-events: none; }
+.size span {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 52px; height: 44px; padding: 0 12px;
+  border: 2px solid var(--line); font-family: var(--mono); font-weight: 700; font-size: 14px; cursor: pointer;
+}
+.size input:checked + span { border-color: var(--bone); background: var(--bone); color: var(--ink); }
+.size input:focus-visible + span { outline: 3px solid var(--signal); outline-offset: 2px; }
+.card .btn { width: 100%; }
+
+.card--locked .card__stage { --stage: #1C1B18; }
+.card--locked .hoodie { filter: blur(10px) brightness(.55); }
+.card--locked .lock-tape {
+  position: absolute; left: -10%; right: -10%; top: 46%; transform: rotate(-8deg);
+  font-size: 22px; text-align: center; padding-block: 0;
+}
+.card--locked .lock-tape .tape__track { animation-duration: 18s; }
+.card--locked .card__body p.note { margin: 0; color: var(--muted); }
+
+/* Manifesto */
+.manifest { position: relative; overflow: hidden; }
+.manifest__lines { margin: 0; font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(54px, 11vw, 168px); line-height: .9; }
+.manifest__lines span { display: block; }
+.manifest__lines .outline { color: transparent; -webkit-text-stroke: 2px var(--bone); }
+.manifest__lines .hot { color: var(--signal); }
+.manifest__aside { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 48px; max-width: 880px; }
+.manifest__aside p { margin: 0; color: var(--muted); max-width: 42ch; }
+@media (max-width: 680px) { .manifest__aside { grid-template-columns: minmax(0, 1fr); } }
+.cross { position: relative; height: 150px; margin-top: 64px; }
+.cross .tape { position: absolute; left: -5%; right: -5%; top: 50%; font-size: 28px; }
+.cross .tape:first-child { transform: translateY(-50%) rotate(-4deg); }
+.cross .tape:last-child { transform: translateY(-50%) rotate(3deg); background: var(--bone); }
+.cross .tape:last-child .tape__track { animation-direction: reverse; }
+
+/* Order steps */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--bone); counter-reset: s; }
+.step { padding: 28px 28px 8px 0; display: grid; gap: 10px; align-content: start; }
+.step + .step { padding-left: 28px; border-left: 1px solid var(--line); }
+.step__n { font-family: var(--mono); color: var(--signal); font-weight: 700; }
+.step h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 34px; line-height: 1; text-transform: uppercase; }
+.step p { margin: 0; color: var(--muted); max-width: 34ch; }
+@media (max-width: 860px) {
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .step, .step + .step { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+}
+.dm {
+  margin-top: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;
+  border: 2px solid var(--bone); padding: 28px;
+}
+.dm__num { font-family: var(--display); font-size: clamp(48px, 9vw, 112px); line-height: 1; color: var(--signal); letter-spacing: .02em; user-select: all; font-variant-numeric: tabular-nums; }
+.dm__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.copied { min-height: 20px; color: var(--muted); }
+
+/* Footer */
+.footer { padding-block: 64px 32px; overflow: hidden; }
+.footer__big {
+  margin: 0; font-family: var(--display); font-weight: 400; text-transform: uppercase; white-space: nowrap;
+  font-size: clamp(64px, 17vw, 260px); line-height: .85; color: transparent; -webkit-text-stroke: 2px var(--line);
+  text-align: center;
+}
+.footer__row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 32px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .tape__track { animation: none; }
+  .disc, .hoodie { transform: none !important; transition: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="tape tape--top" aria-label="Livraison gratuite au Maroc, premium quality, commande en DM au 0684931988">
+  <div class="tape__track" aria-hidden="true">
+    <span>Livraison gratuite au Maroc</span><span>Premium quality clothing</span><span>Shop now en DM — 0684931988</span><span>Off Limits</span>
+    <span>Livraison gratuite au Maroc</span><span>Premium quality clothing</span><span>Shop now en DM — 0684931988</span><span>Off Limits</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a class="brand" href="#top" aria-label="Off Limits, retour en haut">
+      <img src="logo.jpg" alt="">
+      <b>Off Limits</b>
+    </a>
+    <nav class="nav" aria-label="Principale">
+      <a href="#collection">Collection</a>
+      <a href="#manifeste">Manifeste</a>
+      <a href="#commander">Commander</a>
+      <a class="btn btn--signal js-wa" href="https://wa.me/212684931988" target="_blank" rel="noopener">Shop en DM</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="hero__secret" aria-hidden="true">
+      <p>Accès interdit — Off Limits — Do not cross — Accès interdit — Off Limits — Do not cross</p>
+      <p>Do not cross — Accès interdit — Off Limits — Do not cross — Accès interdit — Off Limits</p>
+      <p>Off Limits — Do not cross — Accès interdit — Off Limits — Do not cross — Accès interdit</p>
+      <p>Accès interdit — Off Limits — Do not cross — Accès interdit — Off Limits — Do not cross</p>
+      <p>Do not cross — Accès interdit — Off Limits — Do not cross — Accès interdit — Off Limits</p>
+      <p>Off Limits — Do not cross — Accès interdit — Off Limits — Do not cross — Accès interdit</p>
+      <p>Accès interdit — Off Limits — Do not cross — Accès interdit — Off Limits — Do not cross</p>
+      <p>Do not cross — Accès interdit — Off Limits — Do not cross — Accès interdit — Off Limits</p>
+      <p>Off Limits — Do not cross — Accès interdit — Off Limits — Do not cross — Accès interdit</p>
+      <p>Accès interdit — Off Limits — Do not cross — Accès interdit — Off Limits — Do not cross</p>
+    </div>
+    <div class="wrap hero__in">
+      <div class="hero__eyebrow mono"><span>Streetwear — Hoodies</span><span>Made for Morocco</span><b>Zone restreinte</b></div>
+      <h1 class="hero__title">
+        <span class="hero__row"><span class="hero__off">Off</span><span class="disc"><img src="logo.jpg" alt="Logo Off Limits : une araignée noire marquée d'un zéro"></span></span>
+        <span class="hero__limits">Limits</span>
+      </h1>
+      <div class="hero__foot">
+        <p class="hero__tag">Not for <em>everyone.</em><br>Pièces premium, livrées partout au Maroc.</p>
+        <div class="hero__ctas">
+          <a class="btn" href="#collection">Voir la collection</a>
+          <a class="btn btn--signal js-wa" href="https://wa.me/212684931988" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
+            Commander en DM
+          </a>
+        </div>
+      </div>
+    </div>
+    <span class="hero__hint mono">Bouge la souris — zone restreinte</span>
+  </section>
+
+  <div class="wrap facts" role="list">
+    <div class="fact" role="listitem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3z"></path><path d="M14 10h4l3 3v3h-7"></path><circle cx="7" cy="17.5" r="1.8"></circle><circle cx="17" cy="17.5" r="1.8"></circle></svg>
+      <div><h3>Livraison gratuite</h3><p>Partout au Maroc.</p></div>
+    </div>
+    <div class="fact" role="listitem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3l-5 4 3 3 2-1v12h8V9l2 1 3-3-5-4c-1 1.5-2.2 2-3 2s-2-.5-3-2z"></path></svg>
+      <div><h3>Premium quality</h3><p>Premium quality clothing, pensé pour durer.</p></div>
+    </div>
+    <div class="fact" role="listitem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
+      <div><h3>Shop now en DM</h3><p><span class="num">0684931988</span></p></div>
+    </div>
+  </div>
+
+  <section class="section" id="collection">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>Collection</h2>
+        <p>Choisis ta couleur et ta taille, puis envoie ta commande en un message. On te répond en DM.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card" data-name="Hoodie Off Limits" style="--garment:#141414; --stage:#FF2A1A;">
+          <div class="card__stage">
+            <span class="card__word" aria-hidden="true">Noir</span>
+            <span class="card__tag mono">01</span>
+            <div class="hoodie">
+              <svg viewBox="0 0 400 440" role="img" aria-label="Dessin du hoodie avec le logo araignée sur la poitrine">
+                <path class="body" d="M120 70 Q200 20 280 70 L330 95 Q370 110 380 160 L395 330 Q396 345 380 348 L350 350 Q338 348 336 335 L325 210 L320 400 Q320 415 305 415 L95 415 Q80 415 80 400 L75 210 L64 335 Q62 348 50 350 L20 348 Q4 345 5 330 L20 160 Q30 110 70 95 Z" stroke="#000" stroke-width="2"></path>
+                <path class="hole" d="M145 78 Q200 150 255 78 Q200 52 145 78 Z"></path>
+                <path class="seam" d="M140 300 L260 300 L282 380 L118 380 Z"></path>
+                <path class="seam" d="M80 395 L320 395 M8 318 L60 322 M340 322 L392 318 M75 210 L80 140 M325 210 L320 140"></path>
+                <path class="string" d="M178 112 L174 175 M222 112 L226 175"></path>
+              </svg>
+              <img src="logo.jpg" alt="">
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="card__top">
+              <div><h3>Hoodie Off Limits</h3><p>Logo araignée sur la poitrine</p></div>
+              <span class="price">[PRIX] DH</span>
+            </div>
+            <fieldset class="opt">
+              <legend class="mono">Couleur : <b class="js-color">Noir</b></legend>
+              <div class="chips">
+                <button type="button" class="swatch" style="--c:#141414" data-color="Noir" data-hex="#141414" data-stage="#FF2A1A" data-string="#ECE8DF" aria-pressed="true" aria-label="Noir"></button>
+                <button type="button" class="swatch" style="--c:#34332F" data-color="Anthracite" data-hex="#34332F" data-stage="#FF2A1A" data-string="#ECE8DF" aria-pressed="false" aria-label="Anthracite"></button>
+                <button type="button" class="swatch" style="--c:#3D4636" data-color="Olive" data-hex="#3D4636" data-stage="#ECE8DF" data-string="#ECE8DF" aria-pressed="false" aria-label="Olive"></button>
+              </div>
+            </fieldset>
+            <fieldset class="opt">
+              <legend class="mono">Taille</legend>
+              <div class="chips">
+                <label class="size"><input type="radio" name="size-1" id="s1-s" value="S"><span>S</span></label>
+                <label class="size"><input type="radio" name="size-1" id="s1-m" value="M" checked><span>M</span></label>
+                <label class="size"><input type="radio" name="size-1" id="s1-l" value="L"><span>L</span></label>
+                <label class="size"><input type="radio" name="size-1" id="s1-xl" value="XL"><span>XL</span></label>
+              </div>
+            </fieldset>
+            <a class="btn btn--signal js-order" href="https://wa.me/212684931988" target="_blank" rel="noopener">Commander en DM</a>
+          </div>
+        </article>
+
+        <article class="card" data-name="Hoodie Off Limits Bone" style="--garment:#E4DFD4; --stage:#0B0B0A; --word:rgba(236,232,223,.08); --string:#0B0B0A;">
+          <div class="card__stage">
+            <span class="card__word" aria-hidden="true">Bone</span>
+            <span class="card__tag mono">02</span>
+            <div class="hoodie">
+              <svg viewBox="0 0 400 440" role="img" aria-label="Dessin du hoodie clair avec le logo araignée sur la poitrine">
+                <path class="body" d="M120 70 Q200 20 280 70 L330 95 Q370 110 380 160 L395 330 Q396 345 380 348 L350 350 Q338 348 336 335 L325 210 L320 400 Q320 415 305 415 L95 415 Q80 415 80 400 L75 210 L64 335 Q62 348 50 350 L20 348 Q4 345 5 330 L20 160 Q30 110 70 95 Z" stroke="#000" stroke-width="2"></path>
+                <path class="hole" d="M145 78 Q200 150 255 78 Q200 52 145 78 Z"></path>
+                <path class="seam" d="M140 300 L260 300 L282 380 L118 380 Z"></path>
+                <path class="seam" d="M80 395 L320 395 M8 318 L60 322 M340 322 L392 318 M75 210 L80 140 M325 210 L320 140"></path>
+                <path class="string" d="M178 112 L174 175 M222 112 L226 175"></path>
+              </svg>
+              <img src="logo.jpg" alt="">
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="card__top">
+              <div><h3>Hoodie Bone</h3><p>Logo araignée sur la poitrine</p></div>
+              <span class="price">[PRIX] DH</span>
+            </div>
+            <fieldset class="opt">
+              <legend class="mono">Couleur : <b class="js-color">Bone</b></legend>
+              <div class="chips">
+                <button type="button" class="swatch" style="--c:#E4DFD4" data-color="Bone" data-hex="#E4DFD4" data-stage="#0B0B0A" data-string="#0B0B0A" aria-pressed="true" aria-label="Bone"></button>
+                <button type="button" class="swatch" style="--c:#CBBFA8" data-color="Sable" data-hex="#CBBFA8" data-stage="#0B0B0A" data-string="#0B0B0A" aria-pressed="false" aria-label="Sable"></button>
+                <button type="button" class="swatch" style="--c:#A9A69F" data-color="Gris clair" data-hex="#A9A69F" data-stage="#FF2A1A" data-string="#0B0B0A" aria-pressed="false" aria-label="Gris clair"></button>
+              </div>
+            </fieldset>
+            <fieldset class="opt">
+              <legend class="mono">Taille</legend>
+              <div class="chips">
+                <label class="size"><input type="radio" name="size-2" id="s2-s" value="S"><span>S</span></label>
+                <label class="size"><input type="radio" name="size-2" id="s2-m" value="M" checked><span>M</span></label>
+                <label class="size"><input type="radio" name="size-2" id="s2-l" value="L"><span>L</span></label>
+                <label class="size"><input type="radio" name="size-2" id="s2-xl" value="XL"><span>XL</span></label>
+              </div>
+            </fieldset>
+            <a class="btn btn--signal js-order" href="https://wa.me/212684931988" target="_blank" rel="noopener">Commander en DM</a>
+          </div>
+        </article>
+
+        <article class="card card--locked" style="--garment:#2A2926;">
+          <div class="card__stage">
+            <span class="card__tag mono">03</span>
+            <div class="hoodie" aria-hidden="true">
+              <svg viewBox="0 0 400 440">
+                <path class="body" d="M120 70 Q200 20 280 70 L330 95 Q370 110 380 160 L395 330 Q396 345 380 348 L350 350 Q338 348 336 335 L325 210 L320 400 Q320 415 305 415 L95 415 Q80 415 80 400 L75 210 L64 335 Q62 348 50 350 L20 348 Q4 345 5 330 L20 160 Q30 110 70 95 Z"></path>
+              </svg>
+            </div>
+            <div class="tape lock-tape" aria-hidden="true">
+              <div class="tape__track"><span>Prochain drop</span><span>Off Limits</span><span>Pas encore</span><span>Prochain drop</span><span>Off Limits</span><span>Pas encore</span></div>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="card__top">
+              <div><h3>Prochain drop</h3><p>Accès restreint pour l'instant</p></div>
+              <span class="price mono" style="font-size:13px; color: var(--muted);">Bientôt</span>
+            </div>
+            <p class="note">Envoie « DROP » en DM pour être prévenu en premier.</p>
+            <a class="btn js-drop" href="https://wa.me/212684931988" target="_blank" rel="noopener">Me prévenir</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section manifest" id="manifeste">
+    <div class="wrap">
+      <p class="mono" style="color: var(--muted); margin: 0 0 24px;">Manifeste</p>
+      <h2 class="manifest__lines">
+        <span>Les règles</span>
+        <span class="outline">s'arrêtent</span>
+        <span class="hot">ici.</span>
+      </h2>
+      <div class="manifest__aside">
+        <p>Off Limits, c'est pour ceux qui ne demandent pas la permission. Des hoodies premium, un logo que tu reconnais de loin.</p>
+        <p>Pas de rayon infini, pas de stock sans fin. Des pièces premium, pensées au Maroc, livrées gratuitement chez toi.</p>
+      </div>
+    </div>
+    <div class="cross" aria-hidden="true">
+      <div class="tape"><div class="tape__track"><span>Do not cross</span><span>Off Limits</span><span>Do not cross</span><span>Off Limits</span><span>Do not cross</span><span>Off Limits</span><span>Do not cross</span><span>Off Limits</span></div></div>
+      <div class="tape"><div class="tape__track"><span>Accès interdit</span><span>Off Limits</span><span>Accès interdit</span><span>Off Limits</span><span>Accès interdit</span><span>Off Limits</span><span>Accès interdit</span><span>Off Limits</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="commander">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>Commander</h2>
+        <p>Pas de panier, pas de compte. Tout se passe en DM, en trois étapes.</p>
+      </div>
+      <ol class="steps" style="list-style:none; margin:0; padding:0;">
+        <li class="step"><span class="step__n">Étape 1</span><h3>Choisis ta pièce</h3><p>Couleur et taille dans la collection.</p></li>
+        <li class="step"><span class="step__n">Étape 2</span><h3>Envoie un DM</h3><p>Le bouton prépare ton message avec ta sélection. Tu n'as qu'à l'envoyer.</p></li>
+        <li class="step"><span class="step__n">Étape 3</span><h3>Reçois chez toi</h3><p>Livraison gratuite partout au Maroc.</p></li>
+      </ol>
+      <div class="dm">
+        <div>
+          <p class="mono" style="margin: 0 0 6px; color: var(--muted);">Shop now en DM</p>
+          <div class="dm__num" id="dm-number">0684931988</div>
+          <p class="copied mono" id="copied" aria-live="polite"></p>
+        </div>
+        <div class="dm__actions">
+          <button type="button" class="btn" id="copy">Copier le numéro</button>
+          <a class="btn btn--signal js-wa" href="https://wa.me/212684931988" target="_blank" rel="noopener">Ouvrir WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer__big" aria-hidden="true">Off Limits</p>
+    <div class="footer__row mono">
+      <span>© 2026 Off Limits</span>
+      <span>Livraison gratuite au Maroc</span>
+      <span>DM — 0684931988</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var WA = 'https://wa.me/212684931988';
+  function wa(text) { return WA + '?text=' + encodeURIComponent(text); }
+
+  document.querySelectorAll('.js-wa').forEach(function (a) {
+    a.href = wa('Salam Off Limits ! Je veux passer une commande.');
+  });
+  document.querySelectorAll('.js-drop').forEach(function (a) {
+    a.href = wa('DROP — Prévenez-moi pour le prochain drop Off Limits.');
+  });
+
+  document.querySelectorAll('.card[data-name]').forEach(function (card) {
+    var order = card.querySelector('.js-order');
+    var colorLabel = card.querySelector('.js-color');
+    function update() {
+      var sw = card.querySelector('.swatch[aria-pressed="true"]');
+      var size = card.querySelector('input[type="radio"]:checked');
+      var color = sw ? sw.dataset.color : '';
+      colorLabel.textContent = color;
+      order.href = wa('Salam Off Limits ! Je veux commander : ' + card.dataset.name + ' — ' + color + ' — Taille ' + (size ? size.value : 'M') + '.');
+    }
+    card.querySelectorAll('.swatch').forEach(function (sw) {
+      sw.addEventListener('click', function () {
+        card.querySelectorAll('.swatch').forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+        sw.setAttribute('aria-pressed', 'true');
+        card.style.setProperty('--garment', sw.dataset.hex);
+        card.style.setProperty('--stage', sw.dataset.stage);
+        card.style.setProperty('--string', sw.dataset.string);
+        card.style.setProperty('--word', sw.dataset.stage === '#0B0B0A' ? 'rgba(236,232,223,.08)' : 'rgba(11,11,10,.14)');
+        update();
+      });
+    });
+    card.querySelectorAll('input[type="radio"]').forEach(function (r) { r.addEventListener('change', update); });
+    update();
+  });
+
+  var copyBtn = document.getElementById('copy');
+  var copied = document.getElementById('copied');
+  copyBtn.addEventListener('click', function () {
+    var num = '0684931988';
+    function fallback() {
+      var r = document.createRange();
+      r.selectNodeContents(document.getElementById('dm-number'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copied.textContent = 'Numéro sélectionné : copie-le avec Ctrl/Cmd + C';
+    }
+    try {
+      navigator.clipboard.writeText(num).then(function () { copied.textContent = 'Numéro copié'; }, fallback);
+    } catch (e) { fallback(); }
+  });
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Flashlight over the restricted zone
+  var hero = document.getElementById('hero');
+  var secret = hero.querySelector('.hero__secret');
+  var follow = false;
+  hero.addEventListener('pointermove', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    follow = true;
+    var r = hero.getBoundingClientRect();
+    secret.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    secret.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+  hero.addEventListener('pointerleave', function () { follow = false; });
+  if (!reduce) {
+    var t0 = performance.now();
+    (function drift(t) {
+      if (!follow) {
+        var k = (t - t0) / 1000;
+        secret.style.setProperty('--mx', (50 + 32 * Math.sin(k * 0.45)) + '%');
+        secret.style.setProperty('--my', (45 + 22 * Math.sin(k * 0.7)) + '%');
+      }
+      requestAnimationFrame(drift);
+    })(t0);
+  }
+
+  // The spider turns as you scroll
+  var disc = document.querySelector('.disc');
+  if (!reduce) {
+    window.addEventListener('scroll', function () {
+      disc.style.setProperty('--rot', (window.scrollY * 0.25) + 'deg');
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>
